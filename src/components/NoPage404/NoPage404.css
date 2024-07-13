@@ -14,8 +14,14 @@
   }
  }
 
- @media only screen and (max-width: 408px) {
+ @media only screen and (max-width: 400px) {
   .center{
     width: 70%;
+  }
+ }
+
+ @media only screen and (max-width: 350px) {
+  .center{
+    width: 80%;
   }
  }

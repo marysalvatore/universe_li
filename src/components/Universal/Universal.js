@@ -13,6 +13,7 @@ const Universal = ({data}) => {
   const [domain, setDomain] = useState('')
   const [name, setName] = useState('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
 
   useEffect(() => {
@@ -65,13 +66,15 @@ const Universal = ({data}) => {
         'content-type': 'application/json'
       }
     })
-    console.log(res)
+    // console.log(res)
     if(res.ok){
       console.log("Yeai!")
       setLoading(false)
+      setError('Error connecting to server')
     }else{
       console.log("Oops! Something is wrong.")
       setLoading(false)
+      setError('Error connecting to server')
     }
   }
 
@@ -102,7 +105,7 @@ const Universal = ({data}) => {
              {loading ? <Spinner /> : 'Login'}
           </Button>
 
-
+          {error ? <p style={{fontSize: '12px', color: 'red'}}>{error}</p> : ''}
         </Form>
         <p style={{fontSize: '12px', marginTop: '10px'}}>All right reserved. Copyright © 2023 {name}</p>
       </div>
